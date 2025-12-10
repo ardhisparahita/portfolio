@@ -4,6 +4,7 @@ import About from "./Pages/About";
 import Contact from "./Pages/Contact";
 import Home from "./Pages/Home";
 import Project from "./Pages/Project";
+import TechStack from "./Pages/TechStack";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <main className="flex-1 pt-20">
           <Home />
           <About />
+          <TechStack />
           <Project />
           <Contact />
         </main>
