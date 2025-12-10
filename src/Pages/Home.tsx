@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Home: React.FC = () => {
   return (
@@ -26,7 +26,7 @@ const Home: React.FC = () => {
             PostgreSQL, and TypeScript.
           </p>
 
-          {/* PRIMARY & SECONDARY ACTION */}
+          {/* PRIMARY ACTION BUTTONS */}
           <div className="flex flex-wrap items-center gap-4 mb-10">
             <a
               href="#projects"
@@ -43,29 +43,42 @@ const Home: React.FC = () => {
             </a>
           </div>
 
-          {/* DIVIDER HALUS */}
+          {/* DIVIDER */}
           <div className="w-16 h-0.5 bg-gray-700 mb-6"></div>
 
-          {/* SOCIAL LINKS (LEBIH KECIL & RAPI) */}
-          <div className="flex flex-wrap items-center gap-3">
+          {/* SOCIAL ICONS ONLY */}
+          <div className="flex items-center gap-4 text-2xl">
+            {/* GitHub */}
             <a
               href="https://github.com/ardhisparahita"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg text-sm hover:border-blue-500 hover:text-blue-400 transition"
+              className="p-2 rounded-lg border border-gray-700 hover:border-blue-500 
+                         hover:text-blue-400 transition"
             >
-              <FaGithub className="text-base" />
-              GitHub
+              <FaGithub />
             </a>
 
+            {/* LinkedIn */}
             <a
               href="https://linkedin.com/in/username"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 border border-gray-700 rounded-lg text-sm hover:border-blue-500 hover:text-blue-400 transition"
+              className="p-2 rounded-lg border border-gray-700 hover:border-blue-500 
+                         hover:text-blue-400 transition"
             >
-              <FaLinkedin className="text-base" />
-              LinkedIn
+              <FaLinkedin />
+            </a>
+
+            {/* Email */}
+            <a
+              href="mailto:your.email@example.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-2 rounded-lg border border-gray-700 hover:border-green-500 
+                         hover:text-green-400 transition"
+            >
+              <FaEnvelope />
             </a>
           </div>
         </div>
