@@ -1,3 +1,5 @@
+import React, { useState } from "react";
+
 const projects = [
   {
     title: "Risol Primadona API",
@@ -12,7 +14,7 @@ const projects = [
     ],
     github: "https://github.com/username/risol-api",
     demo: null,
-    apiDocs: "https://risol-api-docs.vercel.app", // Swagger / Postman Docs
+    apiDocs: "https://risol-api-docs.vercel.app",
   },
   {
     title: "Finance Tracker App",
@@ -29,9 +31,63 @@ const projects = [
     demo: "https://finance-tracker.vercel.app",
     apiDocs: "https://finance-tracker-docs.vercel.app",
   },
+  {
+    title: "Example Project 3",
+    role: "Backend Developer",
+    description: "Contoh projek ke-3.",
+    tech: ["Node.js", "MongoDB"],
+    highlights: ["Auth", "CRUD"],
+    github: "#",
+    demo: null,
+    apiDocs: null,
+  },
+  {
+    title: "Example Project 4",
+    role: "Backend Developer",
+    description: "Contoh projek ke-4.",
+    tech: ["Go", "PostgreSQL"],
+    highlights: ["API", "Deploy"],
+    github: "#",
+    demo: null,
+    apiDocs: null,
+  },
+  {
+    title: "Example Project 5",
+    role: "Backend Developer",
+    description: "Contoh projek ke-5.",
+    tech: ["Python", "FastAPI"],
+    highlights: ["ML", "API"],
+    github: "#",
+    demo: null,
+    apiDocs: null,
+  },
 ];
 
 const Projects: React.FC = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const total = projects.length;
+  const step = 3; // tampil per 3 card
+
+  const nextSlide = () => {
+    const next = currentIndex + step;
+    if (next >= total) return setCurrentIndex(0); // loop kembali ke awal
+    setCurrentIndex(next);
+  };
+
+  const prevSlide = () => {
+    const prev = currentIndex - step;
+    if (prev < 0) {
+      // grup terakhir
+      const remainder = total % step;
+      const lastStart = remainder === 0 ? total - step : total - remainder;
+      return setCurrentIndex(lastStart);
+    }
+    setCurrentIndex(prev);
+  };
+
+  const visibleProjects = projects.slice(currentIndex, currentIndex + step);
+
   return (
     <section
       id="projects"
@@ -42,8 +98,26 @@ const Projects: React.FC = () => {
           Projects
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project, index) => (
+        {/* BUTTONS */}
+        <div className="flex justify-between mb-6">
+          <button
+            onClick={prevSlide}
+            className="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700"
+          >
+            ⬅ Prev
+          </button>
+
+          <button
+            onClick={nextSlide}
+            className="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700"
+          >
+            Next ➡
+          </button>
+        </div>
+
+        {/* CARDS */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {visibleProjects.map((project, index) => (
             <div
               key={index}
               className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-blue-500 transition"
@@ -71,7 +145,6 @@ const Projects: React.FC = () => {
                 ))}
               </ul>
 
-              {/* LINKS */}
               <div className="flex flex-wrap gap-4 text-sm">
                 <a
                   href={project.github}
