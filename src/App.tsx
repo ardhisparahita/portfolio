@@ -8,10 +8,10 @@ import Project from "./Pages/Project";
 function App() {
   return (
     <>
-      <div className="font-sans text-gray-900">
+      <div className="min-h-screen flex flex-col text-gray-200 bg-slate-950">
         <Navbar />
 
-        <main className="pt-20">
+        <main className="flex-1 pt-20">
           <Home />
           <About />
           <Project />
