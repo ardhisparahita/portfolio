@@ -1,3 +1,4 @@
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import About from "./Pages/AboutPage";
 import Home from "./Pages/HomePage";
@@ -14,6 +15,7 @@ function App() {
           <Project />
           <About />
         </main>
+        <Footer />
       </div>
     </>
   );
