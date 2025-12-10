@@ -1,8 +1,8 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
-import About from "./Pages/AboutPage";
+import About from "./Pages/About";
 import Contact from "./Pages/Contact";
-import Home from "./Pages/HomePage";
+import Home from "./Pages/Home";
 import Project from "./Pages/Project";
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
 
         <main className="pt-20">
           <Home />
-          <Project />
           <About />
+          <Project />
           <Contact />
         </main>
         <Footer />
