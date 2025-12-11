@@ -98,7 +98,7 @@ const TechStack: React.FC = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-gray-950 text-white px-6 py-20"
+      className="min-h-screen bg-gray-850 text-white px-6 py-20"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-4 text-blue-400">
