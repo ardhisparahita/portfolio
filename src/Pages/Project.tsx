@@ -2,83 +2,114 @@ import React, { useState } from "react";
 
 const projects = [
   {
-    title: "Risol Primadona API",
+    title: "Todo List App",
+    role: "Backend-Focused Developer",
+    description:
+      "Aplikasi Todo List berbasis web dengan REST API dan frontend Vite, dilengkapi fitur manajemen tugas (CRUD) serta sistem autentikasi lengkap menggunakan JWT, termasuk register, login, dan Google OAuth",
+    tech: [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Passport.js",
+      "JWT",
+      "MySQL",
+      "Sequelize",
+      "Vite",
+      "React",
+      "Tailwind CSS",
+    ],
+    highlights: [
+      "CRUD Operations (Create, Read, Update, Delete)",
+      "JWT Authentication & Authorization",
+      "RESTful API dengan Clean Architecture",
+      "Google OAuth Authentication",
+      "Relational Database Design",
+      "Frontend terintegrasi dengan API",
+    ],
+    github: {
+      backend: "https://github.com/ardhisparahita/todo-backend",
+      frontend: "https://github.com/ardhisparahita/todo-frontend",
+    },
+    demo: "https://todo-app.vercel.app",
+    apiDocs: "https://todo-api-docs.vercel.app",
+  },
+  {
+    title: "KASIR API",
     role: "Backend Developer",
     description:
-      "RESTful API untuk sistem pemesanan UMKM dengan autentikasi JWT dan manajemen produk.",
-    tech: ["Node.js", "Express", "PostgreSQL", "Sequelize", "JWT"],
+      "Membangun RESTful API untuk sistem kasir yang dilengkapi autentikasi JWT, manajemen produk, dan kemampuan export data ke Excel.",
+    tech: ["TypeScript", "Node.js", "Express", "JWT", "MySQL", "Sequelize"],
     highlights: [
+      "CRUD Operations (Create, Read, Update, Delete)",
       "JWT Authentication & Authorization",
-      "CRUD Produk & Order",
       "Relational Database Design",
     ],
-    github: "https://github.com/username/risol-api",
+    github: "https://github.com/ardhisparahita/kasir",
     demo: null,
     apiDocs: "https://risol-api-docs.vercel.app",
   },
   {
-    title: "Finance Tracker App",
-    role: "Full Stack Developer (Backend-Focused)",
+    title: "Blog API",
+    role: "Backend Developer",
     description:
-      "Aplikasi pencatat keuangan berbasis web dengan API backend dan frontend React.",
-    tech: ["TypeScript", "Express", "PostgreSQL", "JWT", "React", "Tailwind"],
+      "Membangun RESTful API untuk blog yang dilengkapi dengan autentikasi jwt, manajemen data di dalam blog, serta terdapat fitur role (Admin, User)",
+    tech: ["Typescript", "Node.js", "Nest.js", "JWT", "MySQL", "TypeORM"],
     highlights: [
-      "RESTful API dengan Clean Architecture",
-      "JWT-based Authentication",
-      "Frontend terintegrasi dengan API",
+      "CRUD Operations (Create, Read, Update, Delete)",
+      "JWT Authentication & Authorization",
+      "Relational Database Design",
+      "Role-based Access Control (Admin, User)",
     ],
-    github: "https://github.com/username/finance-tracker",
-    demo: "https://finance-tracker.vercel.app",
-    apiDocs: "https://finance-tracker-docs.vercel.app",
-  },
-  {
-    title: "Example Project 3",
-    role: "Backend Developer",
-    description: "Contoh projek ke-3.",
-    tech: ["Node.js", "MongoDB"],
-    highlights: ["Auth", "CRUD"],
-    github: "#",
+    github: "https://github.com/ardhisparahita/blog-nest",
     demo: null,
     apiDocs: null,
   },
   {
-    title: "Example Project 4",
+    title: "SIM Sekolah",
     role: "Backend Developer",
-    description: "Contoh projek ke-4.",
-    tech: ["Go", "PostgreSQL"],
-    highlights: ["API", "Deploy"],
-    github: "#",
+    description:
+      "Membangun RESTful API untuk sistem informasi sekolah (SIM Sekolah) yang dilengkapi autentikasi JWT, manajemen data siswa, guru, dan kelas, serta kemampuan memilih role (Admin, Guru, Siswa).",
+    tech: ["TypeScript", "Node.js", "Express", "JWT", "MySQL", "Sequelize"],
+    highlights: [
+      "CRUD Operations (Create, Read, Update, Delete)",
+      "JWT Authentication & Authorization",
+      "RESTful API dengan Clean Architecture",
+      "Role-based Access Control (Admin, Guru, Siswa)",
+      "Relational Database Design",
+    ],
+
+    github: "https://github.com/ardhisparahita/SIM-SEKOLAH/",
     demo: null,
     apiDocs: null,
   },
-  {
-    title: "Example Project 5",
-    role: "Backend Developer",
-    description: "Contoh projek ke-5.",
-    tech: ["Python", "FastAPI"],
-    highlights: ["ML", "API"],
-    github: "#",
-    demo: null,
-    apiDocs: null,
-  },
+
+  // {
+  //   title: "Example Project 5",
+  //   role: "Backend Developer",
+  //   description: "Contoh projek ke-5.",
+  //   tech: ["Python", "FastAPI"],
+  //   highlights: ["ML", "API"],
+  //   github: "#",
+  //   demo: null,
+  //   apiDocs: null,
+  // },
 ];
 
 const Projects: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const total = projects.length;
-  const step = 3; // tampil per 3 card
+  const step = 3;
 
   const nextSlide = () => {
     const next = currentIndex + step;
-    if (next >= total) return setCurrentIndex(0); // loop kembali ke awal
+    if (next >= total) return setCurrentIndex(0);
     setCurrentIndex(next);
   };
 
   const prevSlide = () => {
     const prev = currentIndex - step;
     if (prev < 0) {
-      // grup terakhir
       const remainder = total % step;
       const lastStart = remainder === 0 ? total - step : total - remainder;
       return setCurrentIndex(lastStart);
@@ -91,14 +122,13 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-gray-950 text-white px-6 py-20"
+      className="min-h-screen bg-gray-900 text-white px-6 py-20"
     >
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 text-blue-400">
           Projects
         </h2>
 
-        {/* BUTTONS */}
         <div className="flex justify-between mb-6">
           <button
             onClick={prevSlide}
@@ -115,7 +145,6 @@ const Projects: React.FC = () => {
           </button>
         </div>
 
-        {/* CARDS */}
         <div className="grid md:grid-cols-3 gap-8">
           {visibleProjects.map((project, index) => (
             <div
@@ -128,6 +157,7 @@ const Projects: React.FC = () => {
 
               <p className="text-gray-400 mb-4">{project.description}</p>
 
+              {/* Tech badges */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.map((tech, i) => (
                   <span
@@ -139,20 +169,42 @@ const Projects: React.FC = () => {
                 ))}
               </div>
 
+              {/* Highlights */}
               <ul className="list-disc list-inside text-gray-400 text-sm mb-4">
                 {project.highlights.map((item, i) => (
                   <li key={i}>{item}</li>
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-4 text-sm">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  className="text-blue-400 hover:underline"
-                >
-                  GitHub
-                </a>
+              <div className="flex flex-wrap gap-4 text-sm mt-4 items-center">
+                {/* GitHub: single or multiple */}
+                {project.github && typeof project.github === "object" ? (
+                  <>
+                    <a
+                      href={project.github.backend}
+                      target="_blank"
+                      className="text-blue-400 hover:underline"
+                    >
+                      GitHub Backend
+                    </a>
+
+                    <a
+                      href={project.github.frontend}
+                      target="_blank"
+                      className="text-blue-400 hover:underline"
+                    >
+                      GitHub Frontend
+                    </a>
+                  </>
+                ) : (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    className="text-blue-400 hover:underline"
+                  >
+                    GitHub
+                  </a>
+                )}
 
                 {project.demo && (
                   <a
