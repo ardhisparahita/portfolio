@@ -97,7 +97,8 @@ const Home: React.FC = () => {
             src={profile}
             alt="Ardhis profile photo"
             loading="lazy"
-            className="w-64 h-64 md:w-80 md:h-80 rounded-2xl object-cover shadow-lg border border-gray-700 
+            className="w-64 h-64 md:w-80 md:h-80 aspect-square rounded-full object-cover 
+               shadow-lg border border-gray-700 
                -translate-y-6 md:-translate-y-20"
           />
         </div>
