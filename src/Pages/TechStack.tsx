@@ -9,6 +9,7 @@ import {
   SiPostgresql,
   SiMysql,
   SiSequelize,
+  SiTypeorm,
   SiJsonwebtokens,
   SiReact,
   SiVite,
@@ -49,8 +50,8 @@ const categories: Category[] = [
   {
     name: "Auth & Security",
     techs: [
-      { name: "Passport.js", icon: <SiPassport /> },
       { name: "JWT", icon: <SiJsonwebtokens /> },
+      { name: "Passport.js", icon: <SiPassport /> },
     ],
   },
   {
@@ -59,6 +60,7 @@ const categories: Category[] = [
       { name: "PostgreSQL", icon: <SiPostgresql /> },
       { name: "MySQL", icon: <SiMysql /> },
       { name: "Sequelize", icon: <SiSequelize /> },
+      { name: "TypeORM", icon: <SiTypeorm /> },
     ],
   },
   {
@@ -89,33 +91,31 @@ const categories: Category[] = [
 ];
 
 const TechStack: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState<string>(
-    categories[0].name
-  );
-
+  const [activeCategory, setActiveCategory] = useState(categories[0].name);
   const selectedCategory = categories.find((c) => c.name === activeCategory);
 
   return (
     <section
       id="skills"
-      className="min-h-screen bg-gray-850 text-white px-6 py-20"
+      className="min-h-screen bg-gray-950 text-white px-6 py-20"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-4 text-blue-400">
-          Tech Stack
-        </h2>
-        <p className="text-center text-gray-400 mb-12">
-          Technologies I use to build scalable backend systems and modern web
-          applications.
-        </p>
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-blue-400 mb-3">Tech Stack</h2>
+          <p className="text-gray-400 text-sm max-w-xl mx-auto leading-relaxed">
+            Technologies I use to build scalable backend systems and modern web
+            applications.
+          </p>
+        </div>
 
-        {/* CATEGORY BUTTONS */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        {/* Categories */}
+        <div className="flex flex-wrap justify-center gap-3 mb-10">
           {categories.map((cat) => (
             <button
               key={cat.name}
               onClick={() => setActiveCategory(cat.name)}
-              className={`px-4 py-2 rounded-xl border transition ${
+              className={`px-4 py-2 rounded-lg text-sm border transition ${
                 activeCategory === cat.name
                   ? "bg-blue-600 border-blue-600 text-white"
                   : "border-gray-700 text-gray-300 hover:border-blue-500 hover:text-white"
@@ -126,14 +126,16 @@ const TechStack: React.FC = () => {
           ))}
         </div>
 
-        {/* TECH GRID */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        {/* Tech Grid */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {selectedCategory?.techs.map((tech) => (
             <div
               key={tech.name}
-              className="flex flex-col items-center gap-3 p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-blue-500 transition"
+              className="flex flex-col items-center gap-2 p-5
+                         rounded-xl bg-gray-900 border border-gray-800
+                         hover:border-blue-500 transition-all duration-300"
             >
-              <div className="text-4xl text-blue-400">{tech.icon}</div>
+              <div className="text-3xl text-blue-400">{tech.icon}</div>
               <p className="text-sm text-gray-300 text-center">{tech.name}</p>
             </div>
           ))}
