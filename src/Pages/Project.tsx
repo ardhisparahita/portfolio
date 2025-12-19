@@ -3,28 +3,27 @@ import React, { useState } from "react";
 const projects = [
   {
     title: "Todo List App",
-    role: "Backend-Focused Developer",
+    role: "Backend-Focused Project",
     description:
-      "Aplikasi Todo List berbasis web dengan REST API dan frontend Vite, dilengkapi fitur manajemen tugas (CRUD) serta sistem autentikasi lengkap menggunakan JWT, termasuk register, login, dan Google OAuth",
+      "Web-based Todo application with a secure RESTful API, featuring task management (CRUD), JWT-based authentication, and Google OAuth integration for enhanced user experience.",
     tech: [
       "TypeScript",
       "Node.js",
       "Express",
-      "Passport.js",
       "JWT",
+      "Passport.js",
       "MySQL",
       "Sequelize",
-      "Vite",
       "React",
+      "Vite",
       "Tailwind CSS",
     ],
     highlights: [
-      "CRUD Operations (Create, Read, Update, Delete)",
+      "CRUD-based task management system",
       "JWT Authentication & Authorization",
-      "RESTful API dengan Clean Architecture",
-      "Google OAuth Authentication",
-      "Relational Database Design",
-      "Frontend terintegrasi dengan API",
+      "Google OAuth login integration",
+      "Clean Architecture RESTful API",
+      "Relational database design",
     ],
     github: {
       backend: "https://github.com/ardhisparahita/todo-backend",
@@ -34,15 +33,16 @@ const projects = [
     apiDocs: "https://todo-api-docs.vercel.app",
   },
   {
-    title: "KASIR API",
-    role: "Backend Developer",
+    title: "Kasir API",
+    role: "Backend Developer Project",
     description:
-      "Membangun RESTful API untuk sistem kasir yang dilengkapi autentikasi JWT, manajemen produk, dan kemampuan export data ke Excel.",
+      "RESTful API for a cashier system designed to handle product management, secure authentication, and sales data reporting with Excel export support.",
     tech: ["TypeScript", "Node.js", "Express", "JWT", "MySQL", "Sequelize"],
     highlights: [
-      "CRUD Operations (Create, Read, Update, Delete)",
-      "JWT Authentication & Authorization",
-      "Relational Database Design",
+      "Product & transaction CRUD operations",
+      "JWT-based authentication & authorization",
+      "Sales data export to Excel",
+      "Relational database schema",
     ],
     github: "https://github.com/ardhisparahita/kasir",
     demo: null,
@@ -50,15 +50,15 @@ const projects = [
   },
   {
     title: "Blog API",
-    role: "Backend Developer",
+    role: "Backend Developer Project",
     description:
-      "Membangun RESTful API untuk blog yang dilengkapi dengan autentikasi jwt, manajemen data di dalam blog, serta terdapat fitur role (Admin, User)",
-    tech: ["Typescript", "Node.js", "Nest.js", "JWT", "MySQL", "TypeORM"],
+      "Scalable RESTful API for a blogging platform with role-based access control, secure authentication, and modular architecture using NestJS.",
+    tech: ["TypeScript", "Node.js", "NestJS", "JWT", "MySQL", "TypeORM"],
     highlights: [
-      "CRUD Operations (Create, Read, Update, Delete)",
+      "Post & content management (CRUD)",
       "JWT Authentication & Authorization",
-      "Relational Database Design",
-      "Role-based Access Control (Admin, User)",
+      "Role-Based Access Control (Admin & User)",
+      "Modular & scalable architecture",
     ],
     github: "https://github.com/ardhisparahita/blog-nest",
     demo: null,
@@ -66,103 +66,96 @@ const projects = [
   },
   {
     title: "SIM Sekolah",
-    role: "Backend Developer",
+    role: "Backend Developer Project",
     description:
-      "Membangun RESTful API untuk sistem informasi sekolah (SIM Sekolah) yang dilengkapi autentikasi JWT, manajemen data siswa, guru, dan kelas, serta kemampuan memilih role (Admin, Guru, Siswa).",
+      "RESTful API for a school management system supporting multi-role access, academic data management, and secure authentication.",
     tech: ["TypeScript", "Node.js", "Express", "JWT", "MySQL", "Sequelize"],
     highlights: [
-      "CRUD Operations (Create, Read, Update, Delete)",
-      "JWT Authentication & Authorization",
-      "RESTful API dengan Clean Architecture",
-      "Role-based Access Control (Admin, Guru, Siswa)",
-      "Relational Database Design",
+      "Student, teacher, and class management",
+      "JWT-based authentication system",
+      "Role-Based Access Control (Admin, Teacher, Student)",
+      "Clean Architecture RESTful API",
     ],
-
     github: "https://github.com/ardhisparahita/SIM-SEKOLAH/",
     demo: null,
     apiDocs: null,
   },
-
-  // {
-  //   title: "Example Project 5",
-  //   role: "Backend Developer",
-  //   description: "Contoh projek ke-5.",
-  //   tech: ["Python", "FastAPI"],
-  //   highlights: ["ML", "API"],
-  //   github: "#",
-  //   demo: null,
-  //   apiDocs: null,
-  // },
 ];
 
 const Projects: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const total = projects.length;
   const step = 3;
-
-  const nextSlide = () => {
-    const next = currentIndex + step;
-    if (next >= total) return setCurrentIndex(0);
-    setCurrentIndex(next);
-  };
-
-  const prevSlide = () => {
-    const prev = currentIndex - step;
-    if (prev < 0) {
-      const remainder = total % step;
-      const lastStart = remainder === 0 ? total - step : total - remainder;
-      return setCurrentIndex(lastStart);
-    }
-    setCurrentIndex(prev);
-  };
-
+  const total = projects.length;
   const visibleProjects = projects.slice(currentIndex, currentIndex + step);
+
+  const nextSlide = () =>
+    setCurrentIndex((prev) => (prev + step >= total ? 0 : prev + step));
+
+  const prevSlide = () =>
+    setCurrentIndex((prev) =>
+      prev - step < 0 ? Math.max(total - step, 0) : prev - step
+    );
 
   return (
     <section
       id="projects"
-      className="min-h-screen bg-gray-900 text-white px-6 py-20"
+      className="min-h-screen bg-gray-950 text-white px-6 py-20"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-blue-400">
-          Projects
-        </h2>
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-blue-400 mb-3">Projects</h2>
+          <p className="text-gray-400 max-w-xl mx-auto text-sm leading-relaxed">
+            Backend-focused projects demonstrating RESTful API development,
+            authentication, and relational database design.
+          </p>
+        </div>
 
+        {/* Navigation */}
         <div className="flex justify-between mb-6">
           <button
             onClick={prevSlide}
-            className="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700"
+            className="px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-sm"
           >
-            ⬅ Prev
+            ← Prev
           </button>
-
           <button
             onClick={nextSlide}
-            className="px-4 py-2 rounded bg-gray-800 hover:bg-gray-700"
+            className="px-4 py-2 rounded-lg bg-gray-800 hover:bg-gray-700 transition text-sm"
           >
-            Next ➡
+            Next →
           </button>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        {/* Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
           {visibleProjects.map((project, index) => (
             <div
               key={index}
-              className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-blue-500 transition"
+              className="bg-gray-900 border border-gray-800 rounded-xl p-5
+                     hover:border-blue-500 transition-all duration-300
+                     flex flex-col h-full"
             >
-              <h3 className="text-2xl font-semibold mb-1">{project.title}</h3>
+              {/* Title */}
+              <div className="mb-3">
+                <h3 className="text-xl font-semibold leading-snug">
+                  {project.title}
+                </h3>
+                <p className="text-xs text-blue-400 mt-1">{project.role}</p>
+              </div>
 
-              <p className="text-sm text-blue-400 mb-3">{project.role}</p>
+              {/* Description */}
+              <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                {project.description}
+              </p>
 
-              <p className="text-gray-400 mb-4">{project.description}</p>
-
-              {/* Tech badges */}
+              {/* Tech */}
               <div className="flex flex-wrap gap-2 mb-4">
-                {project.tech.map((tech, i) => (
+                {project.tech.slice(0, 6).map((tech, i) => (
                   <span
                     key={i}
-                    className="text-xs bg-gray-800 px-3 py-1 rounded-full"
+                    className="text-[11px] bg-gray-800 px-2.5 py-1 rounded-full"
                   >
                     {tech}
                   </span>
@@ -170,14 +163,14 @@ const Projects: React.FC = () => {
               </div>
 
               {/* Highlights */}
-              <ul className="list-disc list-inside text-gray-400 text-sm mb-4">
-                {project.highlights.map((item, i) => (
-                  <li key={i}>{item}</li>
+              <ul className="text-gray-400 text-sm space-y-1 mb-6">
+                {project.highlights.slice(0, 3).map((item, i) => (
+                  <li key={i}>• {item}</li>
                 ))}
               </ul>
 
-              <div className="flex flex-wrap gap-4 text-sm mt-4 items-center">
-                {/* GitHub: single or multiple */}
+              {/* Links */}
+              <div className="mt-auto flex flex-wrap gap-4 text-sm font-medium">
                 {project.github && typeof project.github === "object" ? (
                   <>
                     <a
@@ -187,7 +180,6 @@ const Projects: React.FC = () => {
                     >
                       GitHub Backend
                     </a>
-
                     <a
                       href={project.github.frontend}
                       target="_blank"
