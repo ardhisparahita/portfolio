@@ -25,67 +25,82 @@ const Contact: React.FC = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen flex items-center justify-center bg-gray-950 px-4"
+      className="
+        min-h-screen bg-gray-950 text-white 
+        pt-10 pb-24
+      "
     >
-      <div className="max-w-xl w-full bg-gray-900/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-800 shadow-xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-blue-400">
-          Contact Me
-        </h2>
+      {/* MENYAMAKAN CONTAINER: max-w-6xl dengan alignment kiri yang sama (xl:pl-0) */}
+      <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6">
+        {/* HEADER: Struktur disamakan dengan Projects/TechStack */}
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold text-blue-400 mb-3">Contact Me</h2>
+          <p className="text-gray-400 text-sm max-w-xl mx-auto leading-relaxed">
+            Have a project in mind or want to discuss backend architecture? Feel
+            free to send me a message.
+          </p>
+        </div>
 
-        <form className="space-y-6" onSubmit={sendEmail}>
-          <div className="relative">
+        {/* FORM CARD: Dipusatkan (mx-auto) di dalam container utama */}
+        <div className="max-w-xl mx-auto bg-gray-900/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-800 shadow-xl hover:border-blue-500/50 transition-colors duration-300">
+          <form className="space-y-6" onSubmit={sendEmail}>
+            {/* Name Input */}
+            <div className="relative">
+              <input
+                type="text"
+                name="name"
+                placeholder=" "
+                required
+                className="peer w-full p-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 transition"
+              />
+              <label className="absolute left-3 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-blue-400 peer-focus:bg-gray-900 peer-focus:px-1">
+                Name
+              </label>
+            </div>
+
+            {/* Email Input */}
+            <div className="relative">
+              <input
+                type="email"
+                name="email"
+                placeholder=" "
+                required
+                className="peer w-full p-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 transition"
+              />
+              <label className="absolute left-3 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-blue-400 peer-focus:bg-gray-900 peer-focus:px-1">
+                Email
+              </label>
+            </div>
+
             <input
-              type="text"
-              name="name"
-              placeholder=" "
-              required
-              className="peer w-full p-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 transition"
+              type="hidden"
+              name="time"
+              value={new Date().toLocaleString()}
             />
-            <label className="absolute left-3 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-400">
-              Name
-            </label>
-          </div>
 
-          <div className="relative">
-            <input
-              type="email"
-              name="email"
-              placeholder=" "
-              required
-              className="peer w-full p-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 transition"
-            />
-            <label className="absolute left-3 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-400">
-              Email
-            </label>
-          </div>
+            {/* Message Input */}
+            <div className="relative">
+              <textarea
+                name="message"
+                placeholder=" "
+                rows={4}
+                required
+                className="peer w-full p-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 transition resize-none"
+              />
+              <label className="absolute left-3 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:-top-2.5 peer-focus:left-2 peer-focus:text-xs peer-focus:text-blue-400 peer-focus:bg-gray-900 peer-focus:px-1">
+                Message
+              </label>
+            </div>
 
-          <input
-            type="hidden"
-            name="time"
-            value={new Date().toLocaleString()}
-          />
-
-          {/* MESSAGE */}
-          <div className="relative">
-            <textarea
-              name="message"
-              placeholder=" "
-              rows={4}
-              required
-              className="peer w-full p-3 bg-gray-900 border border-gray-700 rounded-xl text-white placeholder-transparent focus:outline-none focus:border-blue-500 transition resize-none"
-            />
-            <label className="absolute left-3 top-3 text-gray-400 text-sm transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-400">
-              Message
-            </label>
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-500 transition transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-blue-600/30"
-          >
-            Send Message
-          </button>
-        </form>
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-500 transition transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-blue-600/30"
+            >
+              Send Message
+            </button>
+          </form>
+        </div>
       </div>
     </section>
   );
