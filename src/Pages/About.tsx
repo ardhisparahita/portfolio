@@ -11,12 +11,10 @@ const About: React.FC = () => {
       aria-label="About Me Section"
     >
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6">
-        {/* Title */}
         <h2 className="text-3xl font-bold text-center mb-10 text-blue-400">
           About Me
         </h2>
 
-        {/* Content */}
         <div className="space-y-6 text-gray-300 text-base leading-relaxed text-justify">
           <p>
             Sebagai seorang{" "}
@@ -63,7 +61,6 @@ const About: React.FC = () => {
             memastikan integrasi data berjalan mulus.
           </p>
 
-          {/* PARAGRAF TERAKHIR YANG SUDAH DIPERBAIKI (OPSI A) */}
           <p>
             Saat ini, saya menempuh semester 5 di{" "}
             <span className="font-semibold text-white">

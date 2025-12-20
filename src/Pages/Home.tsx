@@ -26,7 +26,6 @@ const Hero: React.FC = () => {
         px-6 xl:pl-0 xl:pr-6
       "
       >
-        {/* LEFT SIDE (TEKS) */}
         <div className="flex flex-col justify-start">
           <h1 className="text-3xl sm:text-5xl font-bold leading-tight">
             Halo, saya <span className="text-blue-400">Ardhis</span>
@@ -56,7 +55,6 @@ const Hero: React.FC = () => {
             ditampilkan di sisi frontend.
           </p>
 
-          {/* CTA BUTTONS */}
           <div className="mt-5 flex gap-3">
             <a
               href="#projects"
@@ -73,10 +71,8 @@ const Hero: React.FC = () => {
             </a>
           </div>
 
-          {/* --- GARIS PEMISAH (DIVIDER) --- */}
           <div className="w-full max-w-xl border-t border-gray-800 my-5"></div>
 
-          {/* SOCIAL ICONS */}
           <div className="flex gap-4">
             <a
               href="https://github.com/ardhisparahita"
@@ -105,12 +101,6 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* RIGHT SIDE (FOTO) */}
-        {/* PERUBAHAN DI SINI:
-            pb-0 : Menghilangkan padding bawah di tampilan Mobile supaya mepet ke section berikutnya.
-            md:pb-0 : Tetap 0 di desktop.
-            md:pt-4 : Memberi sedikit jarak atas hanya di desktop agar sejajar mata dengan teks.
-        */}
         <div className="flex justify-center md:justify-end items-start pb-0 md:pb-0 md:pt-4">
           <img
             src={profileImg}

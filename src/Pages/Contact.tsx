@@ -30,9 +30,7 @@ const Contact: React.FC = () => {
         pt-10 pb-24
       "
     >
-      {/* MENYAMAKAN CONTAINER: max-w-6xl dengan alignment kiri yang sama (xl:pl-0) */}
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6">
-        {/* HEADER: Struktur disamakan dengan Projects/TechStack */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-400 mb-3">Contact Me</h2>
           <p className="text-gray-400 text-sm max-w-xl mx-auto leading-relaxed">
@@ -41,10 +39,8 @@ const Contact: React.FC = () => {
           </p>
         </div>
 
-        {/* FORM CARD: Dipusatkan (mx-auto) di dalam container utama */}
         <div className="max-w-xl mx-auto bg-gray-900/50 backdrop-blur-xl p-8 rounded-2xl border border-gray-800 shadow-xl hover:border-blue-500/50 transition-colors duration-300">
           <form className="space-y-6" onSubmit={sendEmail}>
-            {/* Name Input */}
             <div className="relative">
               <input
                 type="text"
@@ -58,7 +54,6 @@ const Contact: React.FC = () => {
               </label>
             </div>
 
-            {/* Email Input */}
             <div className="relative">
               <input
                 type="email"
@@ -78,7 +73,6 @@ const Contact: React.FC = () => {
               value={new Date().toLocaleString()}
             />
 
-            {/* Message Input */}
             <div className="relative">
               <textarea
                 name="message"
@@ -92,7 +86,6 @@ const Contact: React.FC = () => {
               </label>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               className="w-full bg-blue-600 text-white py-3 rounded-xl font-medium hover:bg-blue-500 transition transform hover:-translate-y-0.5 active:translate-y-0 shadow-lg shadow-blue-600/30"

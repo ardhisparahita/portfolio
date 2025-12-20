@@ -105,12 +105,7 @@ const Projects: React.FC = () => {
         pt-10 pb-24
       "
     >
-      {/* PERBAIKAN CONTAINER:
-          px-6 dipindahkan ke sini, ditambah xl:pl-0 
-          agar sejajar dengan logo di navbar
-      */}
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6">
-        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-400 mb-3">Projects</h2>
           <p className="text-gray-400 max-w-xl mx-auto text-sm leading-relaxed">
@@ -119,7 +114,6 @@ const Projects: React.FC = () => {
           </p>
         </div>
 
-        {/* Navigation */}
         <div className="flex justify-between mb-6">
           <button
             onClick={prevSlide}
@@ -135,7 +129,6 @@ const Projects: React.FC = () => {
           </button>
         </div>
 
-        {/* Cards */}
         <div className="grid md:grid-cols-3 gap-6">
           {visibleProjects.map((project, index) => (
             <div
@@ -144,7 +137,6 @@ const Projects: React.FC = () => {
                       hover:border-blue-500 transition-all duration-300
                       flex flex-col h-full"
             >
-              {/* Title */}
               <div className="mb-3">
                 <h3 className="text-xl font-semibold leading-snug">
                   {project.title}
@@ -152,12 +144,10 @@ const Projects: React.FC = () => {
                 <p className="text-xs text-blue-400 mt-1">{project.role}</p>
               </div>
 
-              {/* Description */}
               <p className="text-gray-400 text-sm leading-relaxed mb-4">
                 {project.description}
               </p>
 
-              {/* Tech */}
               <div className="flex flex-wrap gap-2 mb-4">
                 {project.tech.slice(0, 6).map((tech, i) => (
                   <span
@@ -169,14 +159,12 @@ const Projects: React.FC = () => {
                 ))}
               </div>
 
-              {/* Highlights */}
               <ul className="text-gray-400 text-sm space-y-1 mb-6">
                 {project.highlights.slice(0, 3).map((item, i) => (
                   <li key={i}>• {item}</li>
                 ))}
               </ul>
 
-              {/* Links */}
               <div className="mt-auto flex flex-wrap gap-4 text-sm font-medium">
                 {project.github && typeof project.github === "object" ? (
                   <>

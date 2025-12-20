@@ -66,8 +66,8 @@ const categories: Category[] = [
   {
     name: "Architecture / API",
     techs: [
-      { name: "RESTful API", icon: <SiExpress /> }, // Menggunakan icon Express sebagai representasi
-      { name: "MVC / Clean Arch", icon: <SiNodedotjs /> }, // Menggunakan icon Node sebagai representasi
+      { name: "RESTful API", icon: <SiExpress /> },
+      { name: "MVC / Clean Arch", icon: <SiNodedotjs /> },
     ],
   },
   {
@@ -102,12 +102,7 @@ const TechStack: React.FC = () => {
         pt-10 pb-24
       "
     >
-      {/* PERBAIKAN CONTAINER:
-          Menambahkan padding horizontal di sini dan xl:pl-0 
-          agar sejajar dengan logo di navbar/hero 
-      */}
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6">
-        {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-400 mb-3">Tech Stack</h2>
           <p className="text-gray-400 text-sm max-w-xl mx-auto leading-relaxed">
@@ -116,7 +111,6 @@ const TechStack: React.FC = () => {
           </p>
         </div>
 
-        {/* Categories */}
         <div className="flex flex-wrap justify-center gap-3 mb-10">
           {categories.map((cat) => (
             <button
@@ -133,7 +127,6 @@ const TechStack: React.FC = () => {
           ))}
         </div>
 
-        {/* Tech Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
           {selectedCategory?.techs.map((tech) => (
             <div
