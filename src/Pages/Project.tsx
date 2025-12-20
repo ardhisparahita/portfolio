@@ -30,11 +30,17 @@ const projects: Project[] = [
     role: "Backend-Focused Project",
     description:
       "Web-based Todo application with a secure RESTful API, featuring task management (CRUD), JWT-based authentication, and Google OAuth integration.",
-    tech: ["TypeScript", "Node.js", "Express", "JWT", "Passport", "Sequelize"],
-    highlights: [
-      "CRUD task management",
-      "Google OAuth integration",
+    tech: [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "RESTful API",
       "Clean Architecture",
+    ],
+    highlights: [
+      "JWT & Google OAuth Integration",
+      "Clean Architecture Implementation",
+      "Secure Task Management CRUD",
     ],
     github: {
       backend: "https://github.com/ardhisparahita/todo-backend",
@@ -48,11 +54,11 @@ const projects: Project[] = [
     role: "Backend Developer Project",
     description:
       "Scalable RESTful API for a blogging platform featuring full CRUD functionality, role-based access control, and modular architecture using NestJS.",
-    tech: ["TypeScript", "NestJS", "JWT", "MySQL", "TypeORM"],
+    tech: ["NestJS", "TypeScript", "MySQL", "TypeORM", "RESTful API"],
     highlights: [
-      "Full CRUD operations",
-      "RBAC (Admin & User)",
-      "Modular architecture",
+      "Modular Architecture Design",
+      "RBAC (Admin & User) Implementation",
+      "Comprehensive API Documentation",
     ],
     github: "https://github.com/ardhisparahita/blog-nest",
     demo: null,
@@ -63,26 +69,39 @@ const projects: Project[] = [
     role: "Backend Developer Project",
     description:
       "RESTful API for a cashier system designed to handle product management, secure authentication, and sales data reporting with Excel export support.",
-    tech: ["TypeScript", "Node.js", "Express", "JWT", "MySQL", "Sequelize"],
+    tech: [
+      "Node.js",
+      "Express",
+      "Sequelize",
+      "RESTful API",
+      "Clean Architecture",
+    ],
     highlights: [
-      "Product & transaction CRUD",
-      "Sales data export to Excel",
-      "Relational database schema",
+      "Sales Data Export to Excel",
+      "Relational Database Schema Design",
+      "Transaction Management System",
     ],
     github: "https://github.com/ardhisparahita/kasir",
     demo: null,
     apiDocs: "https://risol-api-docs.vercel.app",
   },
   {
-    title: "sim-sekolah api",
+    title: "sim-sekolah-api",
     role: "Backend Developer Project",
     description:
       "RESTful API for a school management system supporting multi-role access, academic data management, and secure authentication.",
-    tech: ["TypeScript", "Node.js", "Express", "JWT", "MySQL", "Sequelize"],
-    highlights: [
-      "Multi-role access",
-      "Academic data management",
+    tech: [
+      "TypeScript",
+      "Node.js",
+      "Express",
+      "Sequelize",
+      "MySQL",
       "Clean Architecture",
+    ],
+    highlights: [
+      "Multi-role Access Control",
+      "Academic Data Management Logic",
+      "Structured Clean Architecture",
     ],
     github: "https://github.com/ardhisparahita/SIM-SEKOLAH/",
     demo: null,
@@ -92,12 +111,12 @@ const projects: Project[] = [
     title: "ecommerce-microservice",
     role: "Backend Architect",
     description:
-      "Microservice architecture for ecommerce platform using RabbitMQ.",
-    tech: ["Go", "RabbitMQ", "Redis", "Docker"],
+      "Microservice architecture for ecommerce platform using RabbitMQ to handle asynchronous communication between services.",
+    tech: ["Go", "RabbitMQ", "Redis", "Docker", "Microservices"],
     highlights: [
-      "Event-driven architecture",
-      "High scalability",
-      "Containerized",
+      "Event-driven Architecture",
+      "High Scalability Design",
+      "Service Containerization",
     ],
     github: "#",
     demo: null,
@@ -120,13 +139,10 @@ const Projects: React.FC = () => {
 
   const handleShowLess = () => {
     setVisibleCount(INITIAL_LIMIT);
-
     const section = document.getElementById("projects");
-
     if (section) {
       const yOffset = -100;
       const y = section.getBoundingClientRect().top + window.scrollY + yOffset;
-
       window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
@@ -136,7 +152,7 @@ const Projects: React.FC = () => {
       id="projects"
       className="bg-gray-950 text-gray-300 font-mono py-24 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6 relative z-10">
         <div className="mb-12 flex items-center gap-3 text-sm md:text-base font-bold border-b border-gray-800 pb-4">
