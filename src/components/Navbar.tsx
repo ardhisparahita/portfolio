@@ -1,68 +1,66 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 
-const Navbar: React.FC = () => {
+const Navbar = () => {
   const [open, setOpen] = useState(false);
-
   const items = ["Home", "About", "Tech Stack", "Projects", "Contact"];
 
   return (
-    <nav className="fixed w-full bg-gray-900/90 backdrop-blur border-b border-gray-800 z-50">
-      <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+    <nav className="fixed top-0 z-50 w-full h-[72px] bg-slate-950/90 backdrop-blur border-b border-gray-800">
+      {/* PERBAIKAN DI SINI:
+          Gunakan 'xl:pl-0' (bukan md).
+          - px-6    : Di HP/Tablet/Laptop Kecil, tetap ada jarak aman 24px.
+          - xl:pl-0 : Hanya di Layar Besar (>1280px), logo mepet garis container.
+      */}
+      <div className="max-w-6xl mx-auto h-full flex justify-between items-center px-6 xl:pl-0 xl:pr-6">
         {/* LOGO */}
-        <h1 className="text-xl font-bold text-blue-400">Ardhis.dev</h1>
+        <div className="text-xl font-bold text-blue-400 cursor-pointer">
+          <Link to="home" smooth duration={500}>
+            Ardhis.dev
+          </Link>
+        </div>
 
         {/* DESKTOP MENU */}
         <div className="hidden md:flex space-x-8 text-sm text-gray-300">
-          {items.map((item) => {
-            const target =
-              item === "Tech Stack" ? "skills" : item.toLowerCase();
-
-            return (
-              <Link
-                key={item}
-                to={target}
-                smooth
-                duration={500}
-                offset={-80}
-                className="cursor-pointer hover:text-blue-400 transition"
-              >
-                {item}
-              </Link>
-            );
-          })}
+          {items.map((item) => (
+            <Link
+              key={item}
+              to={item === "Tech Stack" ? "techstack" : item.toLowerCase()}
+              smooth
+              duration={500}
+              offset={-72}
+              className="cursor-pointer hover:text-blue-400 transition"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
 
         {/* MOBILE BUTTON */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-xl text-white"
+          className="md:hidden text-2xl text-white"
         >
-          ☰
+          {open ? "✕" : "☰"}
         </button>
       </div>
 
       {/* MOBILE MENU */}
       {open && (
-        <div className="md:hidden bg-gray-900 border-t border-gray-800 px-6 py-4 space-y-4 text-gray-300">
-          {items.map((item) => {
-            const target =
-              item === "Tech Stack" ? "skills" : item.toLowerCase();
-
-            return (
-              <Link
-                key={item}
-                to={target}
-                smooth
-                duration={500}
-                offset={-80}
-                onClick={() => setOpen(false)}
-                className="block hover:text-blue-400 transition"
-              >
-                {item}
-              </Link>
-            );
-          })}
+        <div className="md:hidden fixed top-[72px] left-0 w-full bg-slate-950 border-t border-gray-800 p-6 space-y-4 shadow-xl">
+          {items.map((item) => (
+            <Link
+              key={item}
+              to={item === "Tech Stack" ? "techstack" : item.toLowerCase()}
+              smooth
+              duration={500}
+              offset={-72}
+              onClick={() => setOpen(false)}
+              className="block text-base hover:text-blue-400 transition cursor-pointer"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
       )}
     </nav>
