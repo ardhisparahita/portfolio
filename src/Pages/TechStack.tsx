@@ -99,10 +99,6 @@ const TechStack: React.FC = () => {
       id="skills"
       className="
         min-h-screen bg-gray-950 text-white 
-        /* PERBAIKAN PADDING VERTIKAL:
-           pt-10 (40px) -> Agar jarak atas sama dengan About
-           pb-24 (96px) -> Agar jarak bawah lega
-        */
         pt-10 pb-24
       "
     >
