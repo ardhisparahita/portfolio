@@ -102,9 +102,6 @@ const Projects: React.FC = () => {
       id="projects"
       className="
         min-h-screen bg-gray-950 text-white 
-        /* PERBAIKAN VERTICAL PADDING: 
-           py-20 diganti pt-10 pb-24 agar konsisten
-        */
         pt-10 pb-24
       "
     >
