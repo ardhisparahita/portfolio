@@ -100,9 +100,19 @@ const Projects: React.FC = () => {
   return (
     <section
       id="projects"
-      className="min-h-screen bg-gray-950 text-white px-6 py-20"
+      className="
+        min-h-screen bg-gray-950 text-white 
+        /* PERBAIKAN VERTICAL PADDING: 
+           py-20 diganti pt-10 pb-24 agar konsisten
+        */
+        pt-10 pb-24
+      "
     >
-      <div className="max-w-6xl mx-auto">
+      {/* PERBAIKAN CONTAINER:
+          px-6 dipindahkan ke sini, ditambah xl:pl-0 
+          agar sejajar dengan logo di navbar
+      */}
+      <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-400 mb-3">Projects</h2>
@@ -134,8 +144,8 @@ const Projects: React.FC = () => {
             <div
               key={index}
               className="bg-gray-900 border border-gray-800 rounded-xl p-5
-                     hover:border-blue-500 transition-all duration-300
-                     flex flex-col h-full"
+                      hover:border-blue-500 transition-all duration-300
+                      flex flex-col h-full"
             >
               {/* Title */}
               <div className="mb-3">
@@ -176,6 +186,7 @@ const Projects: React.FC = () => {
                     <a
                       href={project.github.backend}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="text-blue-400 hover:underline"
                     >
                       GitHub Backend
@@ -183,6 +194,7 @@ const Projects: React.FC = () => {
                     <a
                       href={project.github.frontend}
                       target="_blank"
+                      rel="noopener noreferrer"
                       className="text-blue-400 hover:underline"
                     >
                       GitHub Frontend
@@ -190,8 +202,9 @@ const Projects: React.FC = () => {
                   </>
                 ) : (
                   <a
-                    href={project.github}
+                    href={project.github as string}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-blue-400 hover:underline"
                   >
                     GitHub
@@ -202,6 +215,7 @@ const Projects: React.FC = () => {
                   <a
                     href={project.demo}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-blue-400 hover:underline"
                   >
                     Live Demo
@@ -212,6 +226,7 @@ const Projects: React.FC = () => {
                   <a
                     href={project.apiDocs}
                     target="_blank"
+                    rel="noopener noreferrer"
                     className="text-blue-400 hover:underline"
                   >
                     API Docs
