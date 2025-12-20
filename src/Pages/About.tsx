@@ -9,7 +9,7 @@ const About: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
 
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6 relative z-10">
-        <div className="mb-10 flex items-center gap-3 text-sm md:text-base font-bold border-b border-gray-800 pb-4">
+        <div className="mb-12 flex items-center gap-3 text-sm md:text-base font-bold border-b border-gray-800 pb-4">
           <div className="flex gap-1.5 mr-2">
             <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>

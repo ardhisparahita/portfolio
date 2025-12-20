@@ -207,7 +207,7 @@ const TechStack: React.FC = () => {
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
 
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6 relative z-10">
-        <div className="mb-8 flex items-center gap-3 text-sm md:text-base font-bold border-b border-gray-800 pb-4">
+        <div className="mb-12 flex items-center gap-3 text-sm md:text-base font-bold border-b border-gray-800 pb-4">
           <div className="flex gap-1.5 mr-2">
             <div className="w-3 h-3 rounded-full bg-red-500/80"></div>
             <div className="w-3 h-3 rounded-full bg-yellow-500/80"></div>
@@ -216,6 +216,7 @@ const TechStack: React.FC = () => {
           <span className="text-green-500">root@ardhis:~/skills</span>
           <span className="text-gray-500">$</span>
           <span className="text-gray-100">tree -L 2</span>
+          <span className="w-2.5 h-5 bg-gray-500 animate-pulse ml-2 block"></span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
