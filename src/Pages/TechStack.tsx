@@ -66,8 +66,8 @@ const categories: Category[] = [
   {
     name: "Architecture / API",
     techs: [
-      { name: "RESTful API", icon: <SiExpress /> },
-      { name: "MVC / Clean Architecture", icon: <SiNodedotjs /> },
+      { name: "RESTful API", icon: <SiExpress /> }, // Menggunakan icon Express sebagai representasi
+      { name: "MVC / Clean Arch", icon: <SiNodedotjs /> }, // Menggunakan icon Node sebagai representasi
     ],
   },
   {
@@ -97,9 +97,20 @@ const TechStack: React.FC = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen bg-gray-950 text-white px-6 py-20"
+      className="
+        min-h-screen bg-gray-950 text-white 
+        /* PERBAIKAN PADDING VERTIKAL:
+           pt-10 (40px) -> Agar jarak atas sama dengan About
+           pb-24 (96px) -> Agar jarak bawah lega
+        */
+        pt-10 pb-24
+      "
     >
-      <div className="max-w-6xl mx-auto">
+      {/* PERBAIKAN CONTAINER:
+          Menambahkan padding horizontal di sini dan xl:pl-0 
+          agar sejajar dengan logo di navbar/hero 
+      */}
+      <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6">
         {/* Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-blue-400 mb-3">Tech Stack</h2>
@@ -132,8 +143,8 @@ const TechStack: React.FC = () => {
             <div
               key={tech.name}
               className="flex flex-col items-center gap-2 p-5
-                         rounded-xl bg-gray-900 border border-gray-800
-                         hover:border-blue-500 transition-all duration-300"
+                           rounded-xl bg-gray-900 border border-gray-800
+                           hover:border-blue-500 transition-all duration-300"
             >
               <div className="text-3xl text-blue-400">{tech.icon}</div>
               <p className="text-sm text-gray-300 text-center">{tech.name}</p>
