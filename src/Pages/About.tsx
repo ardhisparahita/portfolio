@@ -4,85 +4,75 @@ const About: React.FC = () => {
   return (
     <section
       id="about"
-      className="min-h-screen bg-gray-950 text-white px-6 py-24"
+      className="
+        min-h-screen bg-gray-950 text-white 
+        pt-10 pb-24
+      "
       aria-label="About Me Section"
     >
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6">
         {/* Title */}
         <h2 className="text-3xl font-bold text-center mb-10 text-blue-400">
           About Me
         </h2>
 
-        <div className="space-y-6 text-gray-300 text-base leading-relaxed">
+        {/* Content */}
+        <div className="space-y-6 text-gray-300 text-base leading-relaxed text-justify">
           <p>
-            Saya adalah seorang{" "}
-            <span className="font-semibold text-white">
-              Backend-Oriented Developer
-            </span>{" "}
-            yang berfokus pada pengembangan{" "}
-            <span className="font-semibold text-white">RESTful API</span> serta
-            sistem backend yang terstruktur, aman, dan mudah dikembangkan.
-            Ketertarikan utama saya berada pada perancangan alur data,
-            autentikasi & otorisasi pengguna, serta integrasi database.
+            Sebagai seorang{" "}
+            <span className="font-semibold text-white">Backend Developer</span>,
+            saya memiliki passion mendalam dalam membangun infrastruktur server
+            yang kokoh. Fokus utama saya adalah menciptakan{" "}
+            <span className="font-semibold text-white">RESTful API</span> yang
+            tidak hanya fungsional, tetapi juga aman, terstruktur, dan siap
+            untuk discaling (scalable). Saya sangat menikmati proses merancang
+            alur data yang efisien serta memecahkan kompleksitas di balik layar
+            sebuah aplikasi.
           </p>
 
           <p>
-            Dalam pengembangan backend, saya terbiasa menggunakan{" "}
-            <span className="font-semibold text-white">Node.js</span> dengan{" "}
+            Keahlian teknis saya berpusat pada ekosistem{" "}
+            <span className="font-semibold text-white">Node.js</span>. Saya
+            mengutamakan <em>maintainability</em> kode dengan menerapkan pola
+            desain <span className="font-semibold text-white">MVC</span> maupun{" "}
+            <span className="font-semibold text-white">Clean Architecture</span>
+            . Pendekatan ini saya implementasikan menggunakan framework{" "}
             <span className="font-semibold text-white">Express.js</span> dan{" "}
-            <span className="font-semibold text-white">NestJS</span>, serta
-            menulis kode menggunakan{" "}
-            <span className="font-semibold text-white">TypeScript</span> dan{" "}
-            <span className="font-semibold text-white">JavaScript</span>. Saya
-            menerapkan autentikasi berbasis{" "}
-            <span className="font-semibold text-white">JWT</span> dan{" "}
-            <span className="font-semibold text-white">OAuth</span> dalam
-            membangun sistem yang aman dan terkontrol.
-          </p>
-
-          <p>
-            Untuk pengelolaan data, saya menggunakan{" "}
+            <span className="font-semibold text-white">NestJS</span> dengan
+            dukungan tipe data ketat dari{" "}
+            <span className="font-semibold text-white">TypeScript</span>. Untuk
+            manajemen data, saya mengandalkan database relasional seperti{" "}
             <span className="font-semibold text-white">PostgreSQL</span> dan{" "}
-            <span className="font-semibold text-white">MySQL</span>, serta ORM
-            seperti <span className="font-semibold text-white">Sequelize</span>{" "}
-            dan <span className="font-semibold text-white">TypeORM</span>. Saya
-            terbiasa merancang struktur database yang efisien dan mudah
-            dikembangkan seiring pertumbuhan aplikasi.
+            <span className="font-semibold text-white">MySQL</span> yang
+            dikelola melalui ORM modern. Keamanan sistem juga menjadi prioritas,
+            dengan penerapan standar autentikasi berbasis{" "}
+            <span className="font-semibold text-white">JWT</span> dan{" "}
+            <span className="font-semibold text-white">OAuth</span>.
           </p>
 
           <p>
-            Meskipun fokus utama saya berada di backend, saya juga memahami
-            dasar-dasar frontend menggunakan{" "}
-            <span className="font-semibold text-white">React</span> dan{" "}
-            <span className="font-semibold text-white">Vite</span>. Pemahaman
-            ini membantu saya membangun solusi end-to-end yang selaras antara
-            sisi frontend dan backend.
-          </p>
-
-          <p>
-            Saya terbiasa bekerja dengan version control seperti{" "}
-            <span className="font-semibold text-white">Git</span>,{" "}
-            <span className="font-semibold text-white">GitHub</span>, dan{" "}
-            <span className="font-semibold text-white">GitLab</span>, serta
-            menggunakan{" "}
+            Dalam setiap proyek, saya menerapkan alur kerja profesional
+            menggunakan <span className="font-semibold text-white">Git</span>{" "}
+            (GitHub/GitLab) untuk version control dan{" "}
             <span className="font-semibold text-white">Postman</span> untuk
-            pengujian dan dokumentasi API. Dalam setiap proyek, saya selalu
-            berupaya membangun sistem backend yang{" "}
-            <span className="font-semibold text-white">
-              scalable, aman, dan dapat diandalkan
-            </span>
-            .
+            dokumentasi serta pengujian API yang komprehensif. Meskipun
+            spesialisasi saya ada di backend, pemahaman saya tentang{" "}
+            <span className="font-semibold text-white">React</span> dan{" "}
+            <span className="font-semibold text-white">Vite</span> memungkinkan
+            saya untuk berkomunikasi secara efektif dengan tim frontend dan
+            memastikan integrasi data berjalan mulus.
           </p>
 
+          {/* PARAGRAF TERAKHIR YANG SUDAH DIPERBAIKI (OPSI A) */}
           <p>
-            Saat ini, saya merupakan mahasiswa semester 5 di{" "}
+            Saat ini, saya menempuh semester 5 di{" "}
             <span className="font-semibold text-white">
               Universitas Amikom Yogyakarta
             </span>
-            . Saya terus mengembangkan kemampuan di bidang backend development
-            dengan mempelajari arsitektur yang lebih baik, meningkatkan kualitas
-            kode, serta mengoptimalkan performa aplikasi agar siap digunakan
-            dalam skala nyata.
+            . Di luar aktivitas akademik, saya secara konsisten mendalami
+            standar industri terkini dalam rekayasa perangkat lunak. Tujuan saya
+            sederhana: menghasilkan kode yang tidak hanya "berjalan", tetapi
+            juga rapi, efisien, dan siap digunakan untuk kebutuhan bisnis nyata.
           </p>
         </div>
       </div>
