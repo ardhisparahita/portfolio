@@ -58,8 +58,9 @@ const About: React.FC = () => {
               <span className="text-purple-400 font-bold"># Workflow</span>{" "}
               <br />
               Dalam bekerja, saya menggunakan{" "}
-              <span className="text-cyan-400">Git</span> untuk version control
-              dan <span className="text-orange-500">Postman</span> untuk testing
+              <span className="text-cyan-400">Git</span>(Github/Gitlab) untuk
+              version control dan{" "}
+              <span className="text-orange-500">Postman</span> untuk testing
               API. Saya juga memahami dasar{" "}
               <span className="text-blue-300">React</span> &{" "}
               <span className="text-purple-400">Vite</span> untuk kolaborasi tim
