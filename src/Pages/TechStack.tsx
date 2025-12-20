@@ -11,17 +11,19 @@ import {
   SiSequelize,
   SiTypeorm,
   SiJsonwebtokens,
-  SiReact,
-  SiVite,
-  SiTailwindcss,
-  SiBootstrap,
-  SiGit,
-  SiGithub,
-  SiGitlab,
   SiPostman,
   SiNestjs,
+  SiSwagger,
+  SiGithub,
+  SiGitlab,
 } from "react-icons/si";
-import { FaFolder, FaFolderOpen } from "react-icons/fa";
+import {
+  FaFolder,
+  FaFolderOpen,
+  FaProjectDiagram,
+  FaCode,
+} from "react-icons/fa";
+import { HiLightningBolt } from "react-icons/hi";
 
 type Tech = {
   name: string;
@@ -37,6 +39,36 @@ type Category = {
 };
 
 const categories: Category[] = [
+  {
+    id: "architecture-patterns",
+    name: "Arch & Patterns",
+    techs: [
+      {
+        name: "Clean Architecture",
+        file: "domain_logic.ts",
+        icon: <FaProjectDiagram />,
+        color: "text-purple-400",
+      },
+      {
+        name: "RESTful API",
+        file: "api_standard.json",
+        icon: <HiLightningBolt />,
+        color: "text-yellow-400",
+      },
+      {
+        name: "MVC Pattern",
+        file: "mvc_structure.js",
+        icon: <FaCode />,
+        color: "text-blue-500",
+      },
+      {
+        name: "API Documentation",
+        file: "swagger.yaml",
+        icon: <SiSwagger />,
+        color: "text-green-500",
+      },
+    ],
+  },
   {
     id: "languages",
     name: "Languages",
@@ -62,7 +94,7 @@ const categories: Category[] = [
     ],
   },
   {
-    id: "backend",
+    id: "backend-runtime",
     name: "Backend Runtime",
     techs: [
       {
@@ -86,25 +118,7 @@ const categories: Category[] = [
     ],
   },
   {
-    id: "auth",
-    name: "Auth & Security",
-    techs: [
-      {
-        name: "JWT",
-        file: "auth.middleware.ts",
-        icon: <SiJsonwebtokens />,
-        color: "text-pink-500",
-      },
-      {
-        name: "Passport.js",
-        file: "passport.config.js",
-        icon: <SiPassport />,
-        color: "text-yellow-200",
-      },
-    ],
-  },
-  {
-    id: "database",
+    id: "database-orm",
     name: "Database & ORM",
     techs: [
       {
@@ -134,54 +148,36 @@ const categories: Category[] = [
     ],
   },
   {
-    id: "frontend",
-    name: "Frontend Integration",
+    id: "auth-security",
+    name: "Auth & Security",
     techs: [
       {
-        name: "React",
-        file: "App.tsx",
-        icon: <SiReact />,
-        color: "text-cyan-400",
+        name: "JWT",
+        file: "auth.middleware.ts",
+        icon: <SiJsonwebtokens />,
+        color: "text-pink-500",
       },
       {
-        name: "Vite",
-        file: "vite.config.ts",
-        icon: <SiVite />,
-        color: "text-purple-400",
-      },
-      {
-        name: "Tailwind CSS",
-        file: "tailwind.config.js",
-        icon: <SiTailwindcss />,
-        color: "text-cyan-300",
-      },
-      {
-        name: "Bootstrap",
-        file: "styles.css",
-        icon: <SiBootstrap />,
-        color: "text-purple-600",
+        name: "Passport.js",
+        file: "passport.config.js",
+        icon: <SiPassport />,
+        color: "text-yellow-200",
       },
     ],
   },
   {
-    id: "tools",
+    id: "devops-tools",
     name: "DevOps & Tools",
     techs: [
       {
-        name: "Git",
-        file: ".gitignore",
-        icon: <SiGit />,
-        color: "text-orange-500",
-      },
-      {
         name: "GitHub",
-        file: "README.md",
+        file: "repositories.md",
         icon: <SiGithub />,
         color: "text-white",
       },
       {
         name: "GitLab",
-        file: ".gitlab-ci.yml",
+        file: "ci_cd_pipeline.yml",
         icon: <SiGitlab />,
         color: "text-orange-400",
       },
@@ -196,8 +192,10 @@ const categories: Category[] = [
 ];
 
 const TechStack: React.FC = () => {
-  const [activeCategory, setActiveCategory] = useState(categories[0].id);
-  const selectedCategory = categories.find((c) => c.id === activeCategory);
+  const [activeCategoryId, setActiveCategoryId] = useState(categories[0].id);
+
+  const selectedCategory =
+    categories.find((c) => c.id === activeCategoryId) || categories[0];
 
   return (
     <section
@@ -228,50 +226,50 @@ const TechStack: React.FC = () => {
               {categories.map((cat) => (
                 <button
                   key={cat.id}
-                  onClick={() => setActiveCategory(cat.id)}
+                  onClick={() => setActiveCategoryId(cat.id)}
                   className={`
                       flex items-center gap-2 px-2 py-1.5 rounded text-sm transition-all duration-200 w-full text-left
                       ${
-                        activeCategory === cat.id
-                          ? "bg-blue-900/20 text-blue-400 font-bold"
+                        activeCategoryId === cat.id
+                          ? "bg-blue-900/30 text-blue-400 font-bold"
                           : "text-gray-400 hover:text-gray-200 hover:bg-gray-900"
                       }
                     `}
                 >
-                  {activeCategory === cat.id ? (
+                  {activeCategoryId === cat.id ? (
                     <FaFolderOpen className="text-yellow-500 shrink-0" />
                   ) : (
                     <FaFolder className="text-gray-600 shrink-0" />
                   )}
-                  <span className="truncate capitalize">{cat.id}</span>
+                  <span className="truncate">{cat.name}</span>
                 </button>
               ))}
             </div>
           </div>
 
           <div className="md:col-span-8 lg:col-span-9">
-            <div className="mb-4 text-gray-500 text-sm">
+            <div className="mb-8 text-gray-500 text-sm">
               Directory:{" "}
-              <span className="text-yellow-500">~/{activeCategory}</span>
+              <span className="text-yellow-500">~/{selectedCategory.id}</span>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {selectedCategory?.techs.map((tech) => (
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-y-10 gap-x-6">
+              {selectedCategory.techs.map((tech) => (
                 <div
                   key={tech.name}
-                  className="flex items-center gap-3 p-3 rounded border border-transparent hover:border-gray-700 hover:bg-gray-900/50 transition duration-200 group cursor-default"
+                  className="flex items-start gap-3 group cursor-default"
                 >
                   <div
-                    className={`text-xl ${tech.color} opacity-80 group-hover:opacity-100 shrink-0`}
+                    className={`text-2xl ${tech.color} opacity-80 group-hover:opacity-100 shrink-0 mt-1 transition-opacity`}
                   >
                     {tech.icon}
                   </div>
 
                   <div className="flex flex-col min-w-0">
-                    <span className="text-gray-300 group-hover:text-blue-300 transition-colors text-sm truncate font-medium">
+                    <span className="text-gray-200 group-hover:text-blue-300 transition-colors text-base truncate font-medium">
                       {tech.file}
                     </span>
-                    <span className="text-[10px] text-gray-600 truncate">
+                    <span className="text-xs text-gray-400 opacity-60 font-semibold uppercase tracking-wider">
                       {tech.name}
                     </span>
                   </div>
@@ -279,9 +277,9 @@ const TechStack: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-8 text-gray-500 text-sm">
+            <div className="mt-16 text-gray-500 text-sm">
               <span className="text-green-500">
-                root@ardhis:~/{activeCategory}
+                root@ardhis:~/{selectedCategory.id}
               </span>{" "}
               $ <span className="animate-pulse">_</span>
             </div>
