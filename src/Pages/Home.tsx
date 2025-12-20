@@ -10,7 +10,7 @@ const Hero: React.FC = () => {
       className="bg-gray-950 text-gray-300 font-mono min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden"
     >
       {/* Background Decoration */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
 
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
         <div className="flex flex-col items-start">
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
 
             <span className="text-gray-100">Ardhis</span>
 
-            <span className="ml-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">
+            <span className="ml-3 text-transparent bg-clip-text bg-linear-to-r from-blue-400 via-cyan-400 to-teal-400 drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">
               Parahita
             </span>
 
@@ -91,7 +91,7 @@ const Hero: React.FC = () => {
 
         <div className="flex justify-center md:justify-end mt-8 md:mt-0">
           <div className="relative group">
-            <div className="absolute -inset-1 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl blur-md opacity-50 group-hover:opacity-100 transition duration-500"></div>
+            <div className="absolute -inset-1 bg-linear-to-br from-blue-600 to-cyan-500 rounded-xl blur-md opacity-50 group-hover:opacity-100 transition duration-500"></div>
 
             <img
               src={profileImg}
