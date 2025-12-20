@@ -7,106 +7,98 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="
-        bg-gray-950 text-white
-        /* Ubah min-h-screen menjadi flex-col agar tinggi mengikuti konten di HP */
-        min-h-screen
-        flex 
-        items-start       
-        pt-[74px]
-      "
-      aria-label="Hero Section"
+      className="bg-gray-950 text-gray-300 font-mono min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden"
     >
-      <div
-        className="
-        max-w-6xl mx-auto w-full 
-        grid grid-cols-1 md:grid-cols-2 
-        gap-6 
-        items-start 
-        px-6 xl:pl-0 xl:pr-6
-      "
-      >
-        <div className="flex flex-col justify-start">
-          <h1 className="text-3xl sm:text-5xl font-bold leading-tight">
-            Halo, saya <span className="text-blue-400">Ardhis</span>
-            <br />
-            <span className="text-blue-400">Parahita</span>
+      {/* Background Decoration */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+      <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6 grid grid-cols-1 md:grid-cols-2 gap-12 items-center relative z-10">
+        <div className="flex flex-col items-start">
+          <div className="mb-5 inline-flex items-center gap-2 px-3 py-1.5 rounded-md bg-blue-900/20 border border-blue-900/50 text-blue-400 text-xs font-semibold">
+            <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+            GET /api/profile/ardhis{" "}
+            <span className="text-green-400 ml-1">200 OK</span>
+          </div>
+
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-4 leading-tight tracking-tight">
+            <span className="text-gray-500 font-light text-2xl md:text-4xl mr-3 align-middle">
+              I'm
+            </span>
+
+            <span className="text-gray-100">Ardhis</span>
+
+            <span className="ml-3 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400 drop-shadow-[0_0_10px_rgba(56,189,248,0.3)]">
+              Parahita
+            </span>
+
+            <span className="animate-pulse text-cyan-400">_</span>
           </h1>
 
-          <p className="mt-2 text-base sm:text-xl text-gray-300 font-medium">
+          <h2 className="text-xl md:text-2xl text-gray-400 mb-6">
             Backend Developer
+          </h2>
+
+          <p className="text-sm md:text-base leading-relaxed text-gray-400 max-w-xl mb-8 border-l-2 border-gray-800 pl-4">
+            Membangun <span className="text-purple-400">RESTful API</span> yang
+            aman dan <em>scalable</em> adalah fokus utama saya. Dengan
+            spesialisasi di ekosistem{" "}
+            <span className="text-green-400">Node.js</span> (NestJS/Express) dan{" "}
+            <span className="text-blue-400">TypeScript</span>, saya menerapkan{" "}
+            <span className="text-yellow-200">Clean Architecture</span> untuk
+            memastikan performa sistem yang optimal. Terbiasa mengelola database{" "}
+            <span className="text-orange-400">SQL</span> serta memahami alur
+            integrasi frontend.
           </p>
 
-          <p className="mt-3 max-w-xl text-gray-400 leading-snug text-sm sm:text-base">
-            Fokus membangun{" "}
-            <span className="text-white font-medium">RESTful API</span> yang
-            scalable dan aman menggunakan ekosistem{" "}
-            <span className="text-white font-medium">Node.js</span> (
-            <span className="text-white font-medium">NestJS/Express</span>) dan{" "}
-            <span className="text-white font-medium">TypeScript</span>. Terbiasa
-            merancang arsitektur database yang efisien serta mengelola
-            autentikasi pengguna.
-          </p>
-
-          <p className="mt-3 max-w-xl text-gray-400 leading-snug text-sm sm:text-base">
-            Saya juga memahami{" "}
-            <span className="text-white font-medium">dasar React</span> untuk
-            memastikan struktur data API yang saya buat mudah diolah dan
-            ditampilkan di sisi frontend.
-          </p>
-
-          <div className="mt-5 flex gap-3">
+          <div className="flex flex-wrap gap-4">
             <a
               href="#projects"
-              className="px-5 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-700 transition font-semibold text-sm"
+              className="px-6 py-3 bg-gray-100 text-gray-950 font-bold rounded-lg hover:bg-white hover:scale-105 transition duration-300 shadow-[0_0_15px_rgba(255,255,255,0.1)]"
             >
-              Lihat Proyek
+              View Projects
             </a>
-
             <a
-              href="#skills"
-              className="px-5 py-2.5 rounded-xl border border-gray-700 hover:border-blue-400 transition text-sm"
+              href="#contact"
+              className="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-400 hover:bg-blue-500/10 transition duration-300"
             >
-              Tech Stack
+              Contact Me
             </a>
           </div>
 
-          <div className="w-full max-w-xl border-t border-gray-800 my-5"></div>
-
-          <div className="flex gap-4">
+          <div className="mt-10 flex gap-6 text-gray-500">
             <a
               href="https://github.com/ardhisparahita"
               target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-xl border border-gray-700 hover:border-blue-400 hover:text-blue-400 transition"
+              className="hover:text-white transition transform hover:-translate-y-1"
             >
-              <FaGithub size={18} />
+              <FaGithub size={22} />
             </a>
-
             <a
               href="https://linkedin.com/in/ardhis-parahita"
               target="_blank"
-              rel="noopener noreferrer"
-              className="p-2.5 rounded-xl border border-gray-700 hover:border-blue-400 hover:text-blue-400 transition"
+              className="hover:text-blue-400 transition transform hover:-translate-y-1"
             >
-              <FaLinkedinIn size={18} />
+              <FaLinkedinIn size={22} />
             </a>
-
             <a
               href="mailto:ardhisparahitaa@gmail.com"
-              className="p-2.5 rounded-xl border border-gray-700 hover:border-blue-400 hover:text-blue-400 transition"
+              className="hover:text-red-400 transition transform hover:-translate-y-1"
             >
-              <HiOutlineMail size={18} />
+              <HiOutlineMail size={24} />
             </a>
           </div>
         </div>
 
-        <div className="flex justify-center md:justify-end items-start pb-0 md:pb-0 md:pt-4">
-          <img
-            src={profileImg}
-            alt="Ardhis Parahita"
-            className="w-40 h-40 sm:w-60 sm:h-60 rounded-full object-cover ring-2 ring-blue-500/40 shadow-xl"
-          />
+        <div className="flex justify-center md:justify-end mt-8 md:mt-0">
+          <div className="relative group">
+            <div className="absolute -inset-1 bg-gradient-to-br from-blue-600 to-cyan-500 rounded-xl blur-md opacity-50 group-hover:opacity-100 transition duration-500"></div>
+
+            <img
+              src={profileImg}
+              alt="Ardhis Parahita"
+              className="relative w-48 h-48 md:w-80 md:h-80 object-cover rounded-xl border-2 border-gray-900 z-10"
+            />
+          </div>
         </div>
       </div>
     </section>
