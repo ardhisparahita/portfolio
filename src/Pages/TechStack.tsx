@@ -16,6 +16,7 @@ import {
   SiSwagger,
   SiGithub,
   SiGitlab,
+  SiDocker,
 } from "react-icons/si";
 import {
   FaFolder,
@@ -169,6 +170,12 @@ const categories: Category[] = [
     id: "devops-tools",
     name: "DevOps & Tools",
     techs: [
+      {
+        name: "Docker",
+        file: "Dockerfile / docker-compose.yml",
+        icon: <SiDocker />,
+        color: "text-blue-500",
+      },
       {
         name: "GitHub",
         file: "repositories.md",
