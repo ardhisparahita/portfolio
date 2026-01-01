@@ -50,20 +50,30 @@ const projects: Project[] = [
     apiDocs: "https://todo-api-docs.vercel.app",
   },
   {
-    title: "blog-api-nest",
+    title: "blog-nest-api",
     role: "Backend Developer Project",
     description:
       "Scalable RESTful API for a blogging platform featuring full CRUD functionality, role-based access control, and modular architecture using NestJS.",
-    tech: ["NestJS", "TypeScript", "MySQL", "TypeORM", "RESTful API"],
+    tech: [
+      "NestJS",
+      "TypeScript",
+      "MySQL",
+      "TypeORM",
+      "RESTful API",
+      "Docker",
+      "Clean Architecture",
+    ],
     highlights: [
       "Modular Architecture Design",
       "RBAC (Admin & User) Implementation",
+      "Dockerized NestJS & MySQL Environment",
       "Comprehensive API Documentation",
     ],
     github: "https://github.com/ardhisparahita/blog-nest",
     demo: null,
     apiDocs: "https://risol-api-docs.vercel.app",
   },
+
   {
     title: "kasir-api",
     role: "Backend Developer Project",
@@ -107,21 +117,6 @@ const projects: Project[] = [
     demo: null,
     apiDocs: null,
   },
-  {
-    title: "ecommerce-microservice",
-    role: "Backend Architect",
-    description:
-      "Microservice architecture for ecommerce platform using RabbitMQ to handle asynchronous communication between services.",
-    tech: ["Go", "RabbitMQ", "Redis", "Docker", "Microservices"],
-    highlights: [
-      "Event-driven Architecture",
-      "High Scalability Design",
-      "Service Containerization",
-    ],
-    github: "#",
-    demo: null,
-    apiDocs: null,
-  },
 ];
 
 const Projects: React.FC = () => {
@@ -152,7 +147,7 @@ const Projects: React.FC = () => {
       id="projects"
       className="bg-gray-950 text-gray-300 font-mono py-24 relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-size-[24px_24px]"></div>
 
       <div className="max-w-6xl mx-auto w-full px-6 xl:pl-0 xl:pr-6 relative z-10">
         <div className="mb-12 flex items-center gap-3 text-sm md:text-base font-bold border-b border-gray-800 pb-4">

@@ -7,6 +7,9 @@ const Hero: React.FC = () => {
   const [displayName, setDisplayName] = useState("");
   const fullName = "Ardhis Parahita";
 
+  // Email baru didefinisikan di sini agar mudah diubah di satu tempat
+  const emailAddress = "ardhisparahita.dev@gmail.com";
+
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -72,8 +75,10 @@ const Hero: React.FC = () => {
             >
               View Projects
             </a>
+
+            {/* Tombol Contact Me menggunakan variable emailAddress */}
             <a
-              href="#contact"
+              href={`mailto:${emailAddress}`}
               className="px-6 py-3 border border-gray-700 text-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-400 hover:bg-blue-500/10 transition duration-300"
             >
               Contact Me
@@ -84,6 +89,7 @@ const Hero: React.FC = () => {
             <a
               href="https://github.com/ardhisparahita"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-white transition transform hover:-translate-y-1"
             >
               <FaGithub size={22} />
@@ -91,12 +97,15 @@ const Hero: React.FC = () => {
             <a
               href="https://linkedin.com/in/ardhis-parahita"
               target="_blank"
+              rel="noopener noreferrer"
               className="hover:text-blue-400 transition transform hover:-translate-y-1"
             >
               <FaLinkedinIn size={22} />
             </a>
+
+            {/* Ikon Email menggunakan variable emailAddress */}
             <a
-              href="mailto:ardhisparahitaa@gmail.com"
+              href={`mailto:${emailAddress}`}
               className="hover:text-red-400 transition transform hover:-translate-y-1"
             >
               <HiOutlineMail size={24} />
