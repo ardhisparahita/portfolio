@@ -35,6 +35,8 @@ const projects: Project[] = [
       "Node.js",
       "Express",
       "RESTful API",
+      "Passport.js & Google Oauth",
+      "Docker",
       "Clean Architecture",
     ],
     highlights: [
@@ -46,8 +48,8 @@ const projects: Project[] = [
       backend: "https://github.com/ardhisparahita/todo-backend",
       frontend: "https://github.com/ardhisparahita/todo-frontend",
     },
-    demo: "https://todo-app.vercel.app",
-    apiDocs: "https://todo-api-docs.vercel.app",
+    demo: "https://todo-ardhis.vercel.app",
+    apiDocs: "https://documenter.getpostman.com/view/22411519/2sBXVfiBJg",
   },
   {
     title: "blog-nest-api",
@@ -71,7 +73,7 @@ const projects: Project[] = [
     ],
     github: "https://github.com/ardhisparahita/blog-nest",
     demo: null,
-    apiDocs: "https://risol-api-docs.vercel.app",
+    apiDocs: "https://blog-nest-production-f66f.up.railway.app/api",
   },
 
   {
@@ -93,7 +95,7 @@ const projects: Project[] = [
     ],
     github: "https://github.com/ardhisparahita/kasir",
     demo: null,
-    apiDocs: "https://risol-api-docs.vercel.app",
+    apiDocs: null,
   },
   {
     title: "sim-sekolah-api",
@@ -265,7 +267,7 @@ const Projects: React.FC = () => {
                     rel="noreferrer"
                     className="flex items-center gap-2 text-sm text-blue-400 hover:text-blue-300 transition-colors"
                   >
-                    <FaExternalLinkAlt /> Deployment
+                    <FaExternalLinkAlt /> Live Demo
                   </a>
                 )}
 

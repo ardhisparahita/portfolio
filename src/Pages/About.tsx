@@ -96,7 +96,7 @@ const About: React.FC = () => {
                 </div>
                 <div>
                   <span className="text-cyan-400">"location"</span>:{" "}
-                  <span className="text-green-300">"Yogyakarta, ID"</span>,
+                  <span className="text-green-300">"Sukoharjo, ID"</span>,
                 </div>
                 <div>
                   <span className="text-cyan-400">"focus"</span>:{" "}
