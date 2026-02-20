@@ -7,8 +7,7 @@ const Hero: React.FC = () => {
   const [displayName, setDisplayName] = useState("");
   const fullName = "Ardhis Parahita";
 
-  // Email baru didefinisikan di sini agar mudah diubah di satu tempat
-  const emailAddress = "ardhisparahita.dev@gmail.com";
+  const emailAddress = "ardhisparahita@gmail.com";
 
   useEffect(() => {
     let index = 0;
